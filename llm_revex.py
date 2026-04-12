@@ -220,6 +220,8 @@ For each finding, provide:
 5. How it may be exploited
 6. Recommended remediation
 
+If the finding is high or critical and exploitable, produce a fully working exploit POC for the vulnerability in Python. 
+
 If no critical or high-severity issue is present, say so clearly and briefly mention any lower-confidence concerns.
 
 Be precise. Do not invent behavior not supported by the file.
@@ -376,7 +378,7 @@ def run_fetch_only(repo_url: str) -> None:
     print(f"[+] Repository extracted to: {repo_root.resolve()}")
 
 
-def run(mode: str, repo_url: str, file_extension: str, endpoint: str, model: str) -> None:
+def run(mode: str, repo_url: str, file_extension: str, output_path: str | None, endpoint: str, model: str) -> None:
     print("[*] Preparing workspace...")
     prepare_directories()
 
